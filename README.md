@@ -1,4 +1,4 @@
-Trabajo de automatización de tareas basicas para Haching, desarrollado en Bash.
+Trabajo de automatización de tareas basicas para Hacking, desarrollado en Bash.
 
 Proceso de instalación
 
