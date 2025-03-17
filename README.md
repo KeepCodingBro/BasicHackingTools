@@ -1,4 +1,5 @@
 Trabajo de automatización de tareas basicas para Hacking, desarrollado en Bash.
+(Esta herramienta debe ejecutarse en Kali o Parrot. Esta la opción de descargar cada herramienta en un SO Linux)
 
 Proceso de instalación
 
