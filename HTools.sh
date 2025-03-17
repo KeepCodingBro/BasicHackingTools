@@ -54,7 +54,7 @@ while [ "$opcion" -lt 8 ]; do
 			exit
 		elif [ "$dato" = "password" ]; then
 			read -p "Introduce la contraseña conocida: " password
-			read -p "introduce la ruta del diccionario que quieres pasar a la password: " password
+			read -p "introduce la ruta del diccionario que quieres pasar a la password: " ruta
                         read -p "introduce la ip de la maquina victima: " ip
                         read -p "introduce la el protocolo que deseas atacar: " protocolo
 			hydra -l $ruta -p $password $protocolo://$ip
