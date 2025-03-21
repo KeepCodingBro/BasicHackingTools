@@ -33,15 +33,15 @@ while [ "$opcion" -lt 8 ]; do
 		gobuster dir -u $protocolo://$ip/ -w $ruta
 		exit
 	elif [ "$opcion" = "4" ]; then
-		echo "Iniciando Fuzzing de subdominios con WFuzz"
-		read -p "Introduce la IP o web sobre la que quieres hacer el ataque: " ip
+                echo "Iniciando Fuzzing de subdominios con WFuzz"
+                read -p "Introduce la IP o web sobre la que quieres hacer el ataque: " ip
                 read -p "Introduce la ruta del diccionario que quieres comprobar: " ruta
-                read -p "Introduce el tipo de conexión http o https: " protocolo
-		read -p "Introduce el filtro de status code (--hc): " statuscode
-		read -p "Introduce el filtro por numero de lineas (--hl): " lines
-		wfuzz -c --hc $statuscode --hl $lines -w $ruta $protocolo://$ip/FUZZ
-		echo "Recuerda que para enlazar una Ip con virtual hosting modifica el archivo /etc/hosts"
-		exit
+                read -p "Introduce la ip del dominio: " ip2
+                read -p "Introduce el filtro de status code (--hc): " statuscode
+                read -p "Introduce el filtro por numero de lineas (--hl): " lines
+                wfuzz -c --hc $statuscode --hl $lines -w $ruta -H "Host: FUZZ.$ip/" -u $ip2
+                echo "Recuerda que para enlazar una Ip con virtual hosting modifica el archivo /etc/hosts"
+                exit
 	elif [ "$opcion" = "5" ]; then
 		echo "Iniciando ataque de fuerza bruta con Hydra"
 		read -p "¿Qué dato conoces?(user / password) " dato
